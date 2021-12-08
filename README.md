@@ -1,15 +1,98 @@
 # [Proxmox VE 6](https://www.udemy.com/course/proxmox-ve-5/learn/lecture/19180588#overview)
 # Section 1: Proxmox VE 6 - Introduction and Installation
 ## 1. Introduction
-![](img/2021-12-07-08-19-00.png)
+  ![](img/2021-12-08-14-39-43.png)
 ## 3. Pre-Installation
+![](img/2021-12-08-14-41-17.png)
 ## 4. Downloading ISO and Installation
+
 ## 5. Proxmox VE and Debian
+![](img/2021-12-08-14-54-40.png)
+![](img/2021-12-08-14-54-56.png)
+![](img/2021-12-08-14-55-20.png)
+
 ## 6. Installing Proxmox VE on Debian
+![](img/2021-12-08-14-55-47.png)
+![](img/2021-12-08-14-56-15.png)
+![](img/2021-12-08-14-56-48.png)
+![](img/2021-12-08-14-57-06.png)
+![](img/2021-12-08-14-57-31.png)
+![](img/2021-12-08-14-57-56.png)
+- Next need to add repo key
+![](img/2021-12-08-14-58-26.png)
+- update repo
+
+skipped
+
 ## 7. Conclusion
 # Section 2: Web Interface and VM Creation
+![](img/2021-12-08-14-59-28.png)
+![](img/2021-12-08-14-59-45.png)
+![](img/2021-12-08-15-00-04.png)
+![](img/2021-12-08-15-00-13.png)
+![](img/2021-12-08-15-00-19.png)
+![](img/2021-12-08-15-00-35.png)
+### Data center contains all proxmox servers
+- each server is labelled PVE (proxmox virtual env I guess).
+- Datacenters can hold clusters of servers
+- If you have HTTP proxy in your datacenter, and need to update servers, access through proxy
+  ![](img/2021-12-08-15-03-47.png)
+
+### Specifying storage
+![](img/2021-12-08-15-05-06.png)
+
+### Replication
+- requires more than one node
+
+### Look up
+- LXE containers
+- Ceph shared storage
+- Migration settings
+- HA (high availability settings)
 ## 8. Web Interface
 ## 9. Create Linux VM
+1. Click on "Create VM"
+
+![](img/2021-12-08-15-06-52.png)
+
+2. Name it Linux
+
+![](img/2021-12-08-15-07-16.png)
+
+3.  Go to local storage -> content -> upload.
+
+![](img/2021-12-08-15-09-22.png)
+
+4. Then click create VM
+5. Choose OS
+6. Choose Graphic card and SCSI controller: defaults
+7. Choose HD: set to 4gb (follow formula from previous)
+8. CPU: Choose one or 2 sockets, details later
+9. Memory: 1gb: 1024
+10. Network: choose bridge you'll connect to
+11. go over configuration Summary
+
+![](img/2021-12-08-15-12-30.png)
+
+12. VM created under PVE1, right click and Start
+
+![](img/2021-12-08-15-13-08.png)
+
+13. click on console to see what's going on
+
+![](img/2021-12-08-15-13-46.png)
+
+14. continue following instructions for OS install
+    1.  Select Disk
+    2.  ![](img/2021-12-08-15-15-11.png)
+    3.  Select Network, and turn on
+    4.  ![](img/2021-12-08-15-15-39.png)
+
+
+
+### Lookup
+- Paravirtualized vs emulated network
+
 ## 10. VM Options
 ## 11. Conclusion
 # Section 3: KVM and LXC Containers
@@ -47,8 +130,39 @@
 ## 40. iSCSI Storage
 # Section 7: Firewall
 ## 41. Prologue
+![](img/2021-12-08-15-17-16.png)
 ## 42. Introduction
+![](img/2021-12-08-15-17-33.png)
+![](img/2021-12-08-15-17-49.png)
+![](img/2021-12-08-15-18-15.png)
+![](img/2021-12-08-15-18-34.png)
+![](img/2021-12-08-15-19-05.png)
+![](img/2021-12-08-15-19-25.png)
+![](img/2021-12-08-15-19-31.png)
+![](img/2021-12-08-15-20-00.png)
 ## 43. Hands-On-Lab
+![](img/2021-12-08-15-20-31.png)
+1. check service of PVE firewall service
+
+![](img/2021-12-08-15-23-03.png)
+
+2. check PVE firewall Status
+
+![](img/2021-12-08-15-23-38.png)
+
+3. You see that it's running, but disabled.  No rules activated yet
+
+4. Datacenter -> Options -> Firewall -> enable = No
+
+![](img/2021-12-08-15-24-43.png)
+
+5. Don't activate yet, set rules first
+![](img/2021-12-08-15-25-21.png)
+
+6. Enable traffic with params below
+
+
+
 ## 44. Lab Summary
 ## 45. Configuration Files
 ## 46. Rules and Macros
